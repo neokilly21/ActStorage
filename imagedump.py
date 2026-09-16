@@ -2,11 +2,11 @@ import requests
 import json
 
 # 이미지 검색
-url = "https://dapi.kakao.v2/search/image"
+url = "https://dapi.kakao.com/v2/search/image"
 headers = {
     "Authorization" : "KakaoAK a08daf0476cc8ca5f7dd8ad868d5fdef"
 }
-DATA = {
+data = {
     "query" : "고준희"
 }
 
