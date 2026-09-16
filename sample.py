@@ -8,7 +8,7 @@ img_response = requests.get(url)
 
 # 요청에 설공했다면,
 if img_response.status_code == 200:
-    #print( img_response.context )
+    #print( img_response.content )
 
     print('================= [이미지 저장] =====================')
     with open("test.jpg", "wb") as fp:

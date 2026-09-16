@@ -1,0 +1,26 @@
+import requests
+import json
+
+# 이미지 검색
+url = "https://dapi.kakao.v2/search/image"
+headers = {
+    "Authorization" : "KakaoAK a08daf0476cc8ca5f7dd8ad868d5fdef"
+}
+DATA = {
+    "query" : "고준희"
+}
+
+# 이미지 검색요청
+response = requests.post(url, headers=headers, data=data)
+
+# 요청에 실패했다면
+if response.status_code != 200:
+    print("error!  because ", response.json())
+else:   # 성공했다면
+    count = 0
+    for image_info in response.json()['documents']:
+        print(f"[{count}th] image url =", image_info['image_url'])
+        # 저장할 이미지의 파일명 설정
+        count = count + 1
+        
+
